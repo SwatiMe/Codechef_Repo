@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+#include <bits/stdc++.h>
+#define ll long long
+int main() {
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll n;
+	    cin>>n;
+	    ll a[n];
+	    ll mini=INT_MAX;
+	    for(ll i=0;i<n;i++){
+	        ll x;
+	        cin>>x;
+	        a[i]=x;
+	        if(x<mini){
+	            mini=x;
+	        }
+	    }
+	    int e=0,o=0;
+	    for(ll i=0;i<n;i++){
+	        if(a[i]%mini!=0){
+	            e++;
+	        }else{
+	            if(a[i]!=mini){
+	                o++;
+	            }
+	        }
+	    }
+	    if(e==0){
+	        cout<<o<<endl;
+	    }else{
+	        cout<<n<<endl;
+	    }
+	}
+	return 0;
+}
