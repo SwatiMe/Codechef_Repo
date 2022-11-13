@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+#define ll long long
+int main() {
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll D,d,P,Q;
+	    cin>>D>>d>>P>>Q;
+	    ll res=0;
+	    for(ll i=1;i<=D;i++){
+	        if(i%d==0){
+	            
+	            res+=P;
+	            P+=Q;
+	            continue;
+	        }
+	            res+=P;
+	    }
+	    cout<<res<<endl;
+	}
+	return 0;
+}
