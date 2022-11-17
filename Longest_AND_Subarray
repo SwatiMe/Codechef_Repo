@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+#include <bits/stdc++.h>
+#define ll long long
+ll setBit(ll n){
+    ll ans=0;
+    while(n>0){
+        ans++;
+        n=n>>1;
+    }
+    return ans; 
+}
+int main() {
+    ll t;
+    cin>>t;
+    while(t--){
+        ll N;
+        cin>>N;
+        ll n=setBit(N);
+        ll ans1=N-pow(2,n-1)+1;
+        ll ans2=pow(2,n-1)-pow(2,n-2);
+        cout<<max(ans1,ans2)<<endl;
+    }
+	return 0;
+}
