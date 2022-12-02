@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+#define ll long long
+int main() {
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll n;
+	    cin>>n;
+	    ll sumi=0;
+	    ll c1=0;
+	    ll c2=0;
+	    for(ll i=0;i<n;i++){
+	        ll x;
+	        cin>>x;
+	        sumi+=x;
+	        if(x%2==0){
+	            c1++;
+	        }
+	    }
+	    for(ll i=0;i<n;i++){
+	        ll x;
+	        cin>>x;
+	        sumi+=x;
+	        if(x%2==0){
+	            c2++;
+	        }
+	    }
+	    ll d=abs(c1-c2);
+	    sumi-=d;
+	    cout<<sumi/2<<endl;;
+	}
+	return 0;
+}
