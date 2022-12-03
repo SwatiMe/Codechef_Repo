@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int x1,y1,x2,y2,x3,y3,x4,y4,sum=0;
+    cin>>x1>>y1>>x2>>y2;
+    cin>>x3>>y3>>x4>>y4;
+    sum =(((y2-y1)*(x2-x1)) + ((y4-y3)*(x4-x3)));
+    int a=max(x1,x3);
+    int b=max(y3,y1);
+    int c=min(x4,x2);
+    int d=min(y4,y2);
+    if(a<c && b<d) sum-=(c-a)*(d-b);
+    cout<<sum<<endl;
+	}
+	return 0;
+}
