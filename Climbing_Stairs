@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+#include <bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+vector<ll> steps(1000001,0);
+unsigned int countSetBits(unsigned int n)
+{
+    unsigned int count = 0;
+    while (n) {
+        count += n & 1;
+        n >>= 1;
+    }
+    return count;
+}
+int main() {
+    steps[1]=1;
+    steps[2]=2;
+    for(ll i=3;i<1000001;i++){
+        steps[i]=(steps[i-1]+steps[i-2])%mod;
+    }
+	ll t;
+	cin>>t;
+	while(t--){
+	    ll n,g;
+	    cin>>n>>g;
+	    ll cn=__builtin_popcount(steps[n]);
+	    if(cn==g){
+	        cout<<"CORRECT"<<endl;
+	    }else{
+	        cout<<"INCORRECT"<<endl;
+	    }
+	}
+	return 0;
+}
