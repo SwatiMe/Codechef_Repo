@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+#include <bits/stdc++.h>
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int sumi=0;
+	    if(n%2==1){
+	        cout << "YES" << endl;
+	        int a = (n-1)/2;
+	for(int i=0; i<n; i++) {
+		vector<int> ans(n,0);
+		for(int j=i+a+1, cnt=a; cnt>0; j++, cnt--)
+			ans[j%n] = 1;
+		for(int x: ans)
+			cout << x;
+		cout << endl;
+	}
+	    }else{
+	        cout<<"NO"<<endl;
+	    }
+	}
+	return 0;
+}
