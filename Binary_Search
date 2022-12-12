@@ -1,0 +1,9 @@
+int bin_search(int arr[], int left, int right, int k) {
+        if (left > right) return -1;
+        int mid = (left + right) / 2;
+        if (arr[mid] == k) return mid;
+        if (arr[mid] > k)
+            return bin_search(arr, left, mid - 1, k);
+        else
+            return bin_search(arr, mid + 1, right, k);
+    }
